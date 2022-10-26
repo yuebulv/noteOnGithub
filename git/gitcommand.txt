@@ -1,0 +1,53 @@
+教学视频https://www.bilibili.com/video/BV1pW411A7a5?p=22
+ll -la
+mkdir prc
+cd prc/
+ll
+git init
+ll .git/
+cat .git/config
+git config --global user.name yuebu_global
+git config --global user.email yuebu_global@qq.com
+git ls-tree -r master --name-only ‘列出master分支下跟踪的文件 
+
+git status	’工作工/暂存区状态	
+git add <file>	'添加到暂存区
+git rm --cached gitcommand.txt
+git add gitcommand.txt
+git commit -m "my second commit" gitcommadn.txt	'添加到本地库
+git log --pretty=oneline	'查看历史记录
+git log --oneline
+git reflog
+git reset --hard <索引值>
+git reset --hard　hard＾＾＾ 	'一个^后退一个版本
+git reset --hard　hard~3	‘后退三个版本    修改工作区、暂存区、本地库
+              --soft   <>	 '只改本地库	
+              --mixed   <>	 '只改本地库和暂存区
+git help reset	'帮助
+git diff <文件名>	‘工作区和暂存区比较
+git diff <本地库中历史版本><文件名>	’工作区和本地库比较
+	不带文件名比较多个文件
+git branch -v	'查看分支
+git branch <分支名>	‘创建分支
+git checkout <分支名>	’切换分支 
+git merge <分支名>	'要切换到合并分支不是被合并分支 
+
+远程库
+git remote -v 
+git remote add origin https://github.com/yuebulv/prctice.git
+git push origin master
+git clone 远程地址
+	pull=fetch+merge
+git fetch [远程库地址别名][远程分支名]
+git merge [远程库地址别名/远程分支名]
+
+vim编辑器
+	：set nu	'显示行号
+	i	‘插入
+	ESC	'
+	:wq	’退出
+vim <file> 
+
+pip install pyinstaller
+pyinstaller.exe --onefile --windowde app.py 封装
+
