@@ -36,6 +36,17 @@ def note_1():
         ### 会对DataFrame中的每个单元格执行指定函数的操作
         data.applymap(lambda x: "%.2f" % x)
 
+def note_2():
+    dataPath = r"c:\data.xlsx"
+    if os.path.exists(dataPath) is False:
+        return f"{dataPath}文件不存在"
+    newDf = pd.read_excel(dataPath)
+    # 查询
+    newDf: DataFrame.loc  # 即能查询又可以覆盖，推荐
+    newDf.iloc
+    newDf: DataFrame.where
+    newDf: DataFrame.query()
+
 
 if __name__ == "__main__":
     note_1()
