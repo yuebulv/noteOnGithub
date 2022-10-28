@@ -140,6 +140,7 @@ def note_1():
         ### 会对DataFrame中的每个单元格执行指定函数的操作
         data.applymap(lambda x: "%.2f" % x)
 
+
 def note_2():
     dataPath = r"c:\data.xlsx"
     if os.path.exists(dataPath) is False:
@@ -199,6 +200,71 @@ def note_2():
         newSeries = newDf["column"].str.startswith("2018-03")  # 这里得到的newSeries全是布尔类型
         print(newDf["column"].str.replace("-", "").str[0:6].str.replace(",", ""))
         newDf["column"].str.replace("正则表达式", "")
+
+    def axis_pandas():
+        '''
+        - axis = 0或者"index":
+            ·如果是单行操作，就指的是某一行
+            ·如果是聚合操作，指的是跨行cross
+        rows.axis = 1或者"columns":
+            ·如果是单列操作，就指的是某一列
+            ·如果是聚合操作，指的是跨列cross columns
+        按哪个axis，就是这个axis要动起来(类似被or遍历)，其它的axis保持不动
+        '''
+        newDf.mean(axis=0)  # 聚合操作的时候，结果输出的是每列的平均值，即表示为进行跨行聚合
+
+    def index_pandas():
+        """
+        1.方便数据查询
+        2.使用index会提升查询性能
+        ·如果index是唯一的，Pandas会使用哈希表优化，查询性能为O(1);
+        ·如果index不是唯一的，但是有序，Pandas会使用二分查找算法，查询性能为O(logN);
+        ·如果index是完全随机的，那么每次查询都要扫描全表，查询性能为O(N);
+        3.使用index能自动对齐数据
+            如有Series相加，相同index的行会自动对齐相加
+        4.更多的数据结构支持
+        """
+        newDf: DataFrame.index.is_monotonic_increasing  # 索引是否单调递增
+        newDf: DataFrame.index.is_unique
+
+    def merge_pandas():
+        """
+        merge 相当于sql的join，将不同的表按key关联到一张表
+         2、理解merge时数量的对齐关系以下关系要正确理解:
+            . one-to-one:一对一关系，关联的key都是唯一的
+            .比如(学号，姓名) merge (学号，年龄)
+            结果条数为:1*1
+        . one-to-many:一对多关系，左边唯一key，右边不唯一key
+            -比比如(学号，姓名) merge (学号，[语文成绩、数学成绩、英语成绩])·结果条数为:1*N
+        . many-to-many:多对多关系，左边右边都不是唯一的
+            比如(学号，[语文成绩、数学成绩、英语成绩]) merge (学号，[篮球、足球、乒乓球)·结果条数为:MN
+        """
+        newDf2: DataFrame
+        pd.merge(newDf, newDf2)
+
+    def concat_pandas():
+        """
+        使用场景:
+            批量合并相同格式的Excel、给DataFrame添加行、I给DataFrame添加列
+        一句话说明concat语法:
+            ·使用某种合并方式(innerlouter)
+            ·沿着某个轴向(axis=0/1)
+            ·把多个Pandas对象(DataFramelSeries)合并成一个。
+        concat语法: pandas.concat(objs, axis=0, join='outer, ignore_index=False)
+            .objs: 一个列表，内容可以是DataFrame或者Series，可以混合
+            .axis:默认是0代表按行合并，如果等于1代表按列合并
+            .join:合并的时候索引的对齐方式，默认是outer join，也可以是inner join
+            .ignore_index:是否忽略掉原来的数据索引
+        append语法:DataFrame.append(other, ignore_index=False)
+            append只有按行合并，没有按列合并，相当于concat按行的简写形式
+            .other:单个dataframe、series、dict，或者列表
+            .ignore_index:是否忽略掉原来的数据索引
+        """
+        newDf2: DataFrame
+        pd.concat([newDf, newDf2, newSeries])
+        pd.concat([pd.DataFrame([i], columns=["A"]) for i in range(5)], ignore_index=True)
+        newDf.append(newDf2)
+        newDf.append({"column": ["values"]}, ignore_index=True)
 
 
 if __name__ == "__main__":
