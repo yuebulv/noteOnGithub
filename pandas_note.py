@@ -2,6 +2,7 @@ import pandas as pd
 from pandas import DataFrame, Series
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 
 
 def notePandas(path):
@@ -109,6 +110,12 @@ def notePandas(path):
 
 # map/apply/applymap
 def note_1():
+    """
+    Pandas的数据转换函数map、apply、applymap
+    1.map:只用于Series,实现每个值>值的映射：
+    2.apply:用于Series?实现每个值的处理，用于Dataframe实现某个轴的Series的处理
+    3.applymap:只能用于DataFrame,用于处理该DataFrame的每个元素；
+    """
     dataPath = r"c:\data.xlsx"
     if os.path.exists(dataPath):
         newDf: DataFrame = pd.read_excel(dataPath)
@@ -161,6 +168,7 @@ def note_2():
     def 新增数据列():
         newDf.loc[:, "新增列"] = newSeries
         newDf.loc[:, "新增列"] = newDf.apply("function", axis=1)
+        newDf[["column", "column1"]] = newDf.apply("function要返回元组两个数(column_value,column1_value)", axis=1, result_type="expand")
         print(newDf["column1"].value_counts())  # 分类计数
         newdf = newDf.assign("series1", "series2")
 
@@ -265,6 +273,33 @@ def note_2():
         pd.concat([pd.DataFrame([i], columns=["A"]) for i in range(5)], ignore_index=True)
         newDf.append(newDf2)
         newDf.append({"column": ["values"]}, ignore_index=True)
+
+    def groupby_pandas():
+        print(newDf.groupby("column").sum)
+        print(newDf.groupby(["column", "column2"], as_index=False).mean)  # 列的分级索引
+        print(newDf.groupby("column").agg([np.sum, np.mean]))  # 列的多种数据统计
+        newDf.groupby("column").agg({"column1": np.sum, "column2": np.mean})
+
+    def 分层索引():
+        newSeries.unstack() # 把二级索引变成列索引
+        newSeries.reset_index()  # 把多层索引变成列
+        print(newSeries.loc[("multiindex1", "multiindex2")])
+        newDf.set_index(["column", "column2"], inplace=True)  # 设置多层索引
+        """
+        DataFrame多层索引的筛选数据
+        ·元组(key1,key2)代表筛选多层索引，其中key1是索引第一级，key2是第二级，比如key1=JD,key2=2019-10-02
+        ·列表[key1,key2]代表同一层的多个KEY,其中key1和key2是并列的同级索引，比如key1=JD,key2=BIDU
+        """
+
+    def 数据透视():
+        """stack/unstack/pivot
+        教程：https://www.bilibili.com/video/BV1UJ411A7Fs/?p=20&spm_id_from=pageDriver&vd_source=71766beb4ab755e8dfb4543e1008fa76
+        stack: DataFrame.stack(level=-1, dropna=Tmue), 将column变成index, 类似以把横放的书籍变成竖放
+        level = -1代表多层索引的最内层，可以通过 == 0、1、2指定多层索引的对应层
+        unstack:DataFrame.unstack(level=.1,fill_value=None),将index:变成column,类似把竖放的书籍变成横放
+        pivot:DataFrame.pivot(index=:None,columns=None,values:=None),指定index、columns、.values实现二维透机
+        """
+        pass
 
 
 if __name__ == "__main__":
