@@ -190,6 +190,7 @@ def note_2():
         newDf.fillna({"column": "value"})
         newDf.loc[:, "column"] = newDf["column"].fillna("value")
         newDf.loc[:, "column"] = newDf["column"].fillna(method="ffill")  # 使用前一个不为空的值填充
+        newDf.interpolate(method="linear")  # 线性插值
 
     def error_pandas():
         "settingWithCopyWarning报警"
@@ -300,6 +301,22 @@ def note_2():
         pivot:DataFrame.pivot(index=:None,columns=None,values:=None),指定index、columns、.values实现二维透机
         """
         pass
+
+def 数据清洗():
+    newDf: DataFrame
+    newSe: Series
+    newSe = newDf.duplicated(keep=False)  # 判断是否为重复行
+    newDf.drop_duplicates(keep="first", inplace=True)
+
+def 索引():
+    "显示、隐式索引"
+    newDf: DataFrame
+    newSe: Series
+    print(newDf.iloc[0])  # iloc隐式索引、loc显示索引
+    print(newDf["column"])  # 列索引
+    print(newDf[0:2])  # 行索引
+    print(newDf.iloc[:, 0:2])  # 列切片
+    newDf.info
 
 
 if __name__ == "__main__":
