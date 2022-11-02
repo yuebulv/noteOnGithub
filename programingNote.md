@@ -440,3 +440,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ### 怎样给自定义函数添加参数说明
 
 - https://www.zhihu.com/question/487116972
+
+# Git
+
+## 冲突
