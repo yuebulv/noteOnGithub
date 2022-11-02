@@ -30,6 +30,7 @@ def notePandas(path):
     newDf["column1"] = newDf["column2"] * newDf['column3']  # 列值相乘
     newDf["column1"] = newDf["column2"].apply(lambda x: x + 2)
     newDf["column1"] = newDf.column2.apply(lambda x: x + 2)
+    newDf.columns = ["-".join(i) for i in newDf.values]  # 值拼接 修改列label
 
     # 数据类型
     newSeries = newSeries.astype(int)
