@@ -1,0 +1,16 @@
+依据：
+windows vista以上系统自带net framework 4.0组件，当revit要求安装该组件时，windows Installer会以系统已安装了该组件或已安装更高版本的该组件，拒绝安装revit带的该组件，而安装引导文件表明该组件为必要组件且得到windows Installer 返回值为false，故中断安装，报错为该组件安装失败；同理，当系统中存在相同或更高版本的Runtime或C++运行库等时，也会发生该错误。
+步骤如下：
+1、revit安装介质目录下，找到安装引导文件setup.ini（注意后缀），用记事本打开
+2、使用find功能查找功能找到报错组件所在的行列，在其后添加语句：IGNORE_FAILURE=YES 
+3、保存后，删除temp目录下的缓存文件，再次尝试安装CAD
+这是另外一个软件出现1603和1609时的解决方案，原理是一样的，我的CAD2012安装用这个方法成功了。确实是睿智程序猿写代码的问题。setup.ini里最好每一个大段都加上述语句
+
+
+      AutoCAD2012安装出现如下错误提示：
+      在XML文件C:Program filesAutodeskContent.ServiceConnect.Service.ContentService.exe.config 中找不到节点://configuration/appSettings/add[@key='InstallLocalization'] /@value，系统错误-2147020584
+       解决办法
+
+       办法1：因为之前安装过AutoCAD2014，没有完全卸载干净，再安装AutoCAD2012就会出现上面的错误提示，其解决办法是将AutoCAD安装目录下的Content Service的文件夹彻底删除就可以了。
+
+      办法2：那个（x86）和系统挂钩了，可能只是一个安装的路径而已，这只是AutoCAD官方提供的一个链接内容服务，对功能没有多大的影响，可以不必理会，AutoCAD2012在使用上，没什么影响！（本人测试总规控规设计软件GPCADK V5.0，用AutoCAD2012中文版，没发现什么异常，没什么影响）

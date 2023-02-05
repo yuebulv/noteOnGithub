@@ -1,5 +1,15 @@
 # Linux
 
+## 命令
+
+sudo su root权限
+
+mv ./需要移动的文件或文件夹 目标地址
+
+rm -r ./要删除的文件或文件夹
+
+find 需要清空的文件夹 -type f -delete
+
 ## Python 相关
 
 
@@ -75,6 +85,16 @@ etc lib var usr boot 目录需要备份
 复制的时候也可以更名
 
 # python
+
+## python
+
+#### 方法与属性
+
+调用方法 fuction_a()
+
+调用属性 a.attribute
+
+#### 静态、动态、类方法
 
 ## pandas
 
@@ -413,6 +433,10 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 - https://zhuanlan.zhihu.com/p/33896402
 
+## re
+
+1. re.split('regx', 'str') # 方法按匹配的子串将字符串分割后返回列表
+
 # xlwings
 
 ## 安装
@@ -442,5 +466,25 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 - https://www.zhihu.com/question/487116972
 
 # Git
+
+## FAQ
+
+1. Git 中文乱码
+
+```shell
+$ git config --global core.quotepath false  		# 显示 status 编码
+$ git config --global gui.encoding utf-8			# 图形界面编码
+$ git config --global i18n.commit.encoding utf-8	# 提交信息编码
+$ git config --global i18n.logoutputencoding utf-8	# 输出 log 编码
+$ export LESSCHARSET=utf-8 (windows下为：set LESSCHARSET=utf-8)
+# 最后一条命令是因为 git log 默认使用 less 分页，所以需要 bash 对 less 命令进行 utf-8 编码
+```
+
+2. ```console
+   $ git rm --cached README 只删除暂存区文件，保留磁盘中文件
+   $ gim commit --amend '用这一次注释覆盖上次提交的注释'
+   ```
+
+   
 
 ## 冲突
