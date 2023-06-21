@@ -1,3 +1,15 @@
+## windows 10
+
+### 激活
+
+https://www.bilibili.com/video/BV1jb4y1p7mr/?spm_id_from=333.337.search-card.all.click&vd_source=71766beb4ab755e8dfb4543e1008fa76
+
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+
+slmgr /skms kms.03k.org
+
+slmgr /ato
+
 ## VMware安装
 
 ## Kali
@@ -37,5 +49,19 @@
 1. kali: 装好kali后，从光盘的VMware tools.tar.gz文件复制出来，解压->进入到有vmware-install.pl文件的文件夹下->运行sudo ./vmware-install.pl -d
 2. apt install open-vm-tools-desktop fuse实现物理机和kali之间自由拖拽文件和复制内容，比vmware tools好用
 
+### win7 X86中安装VMware tools
 
+1. 需要安装补丁KB4474419
+
+根据这个博客，我知道了没有VM tools可以通过U盘拷贝下载好的补丁文件。所以我就先把下载好的补丁文件拷贝到U盘里，然后拔出U盘，再打开虚拟机win7界面插入U盘，选择window7系统，这样就能从U盘里面拷贝文件到虚拟机中的win7系统啦。
+
+然后安装补丁。补丁安装完成后重启win7。
+
+2. 安装VM tools
+
+右键windows 7，选择 安装VMware Tools。
+
+然后打开任务栏第三个图标：资源管理器【那个文件夹的形状】
+
+双击DVD驱动器安装VM tools。按照提示按照即可！
 
