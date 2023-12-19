@@ -8,8 +8,6 @@
 
 ## 语法
 
-
-
 - setq 给一个变量赋值
 
 - list建立一段数据集合
@@ -43,6 +41,13 @@
 
 ## 函数
 
+- defun c: function(a b / c d) # 加c:命令行中调用function
+  - c d 是区域性参数，函数运行完销毁
+
+defun function  # 不加c:，命令行中调用（function）
+
+
+
 - 获取对象起点
 
 		使用对象名处理的方法：
@@ -70,7 +75,39 @@
 )
 ```
 
+getpoint
 
+getdist
+
+(setvar "cmdecho" 0)  命令栏中不显示回显
+
+setvar "osmode" 0 关闭对象捕捉
+
+polar 返回一个点
+
+### 流程控制
+
+if
+
+progn
+
+cond 会根据判断结果匹配条件，[第7集AutoLisp流程控制函数1_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1kb411V7K8?p=7&spm_id_from=pageDriver&vd_source=71766beb4ab755e8dfb4543e1008fa76)
+
+## 技巧
+
+双击(  会标示）
+
+nil 与 “” 有时候不相同，没有输入的时候为""
 
 ## 注意事项
+
+字符串比较时，大小写不同
+
+## 问题
+
+print  “str” 会和回车引号一起输出
+
+princ “str” 会输出str
+
+prin1
 
