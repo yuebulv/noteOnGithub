@@ -2,9 +2,13 @@
 
 ## 书籍
 
-教材1[E:\Z-StudyMaterials\lisp资料\猫老师Lisp入门教程（第一版）0811.pdf.pdf](E:\Z-StudyMaterials\lisp资料\猫老师Lisp入门教程（第一版）0811.pdf.pdf)
+[AUTOCAD完全应用指南高清版(吴永进魔法书新书).pdf](E:\Z-StudyMaterials\lisp资料\AUTOCAD完全应用指南高清版(吴永进魔法书新书).pdf)
+
+教材1[E:\Z-StudyMaterials\lisp资料\AUTOCAD完全应用指南高清版(吴永进魔法书新书).pdf](E:\Z-StudyMaterials\lisp资料\AUTOCAD完全应用指南高清版(吴永进魔法书新书).pdf)
 
 教材2[E:\Z-StudyMaterials\lisp资料\Visual LISP开发者宝典.pdf](E:\Z-StudyMaterials\lisp资料\Visual LISP开发者宝典.pdf)
+
+
 
 ## 语法
 
@@ -42,7 +46,9 @@
 ## 函数
 
 - defun c: function(a b / c d) # 加c:命令行中调用function
-  - c d 是区域性参数，函数运行完销毁
+  - 在使用 (defun C:函数名(自变量/更改变量)···)的中，变量在“/”右边变量内，则称为局部变量，否则为全局变量(注:在 AutoLISP 中，未赋予值的变量，其返回值皆为 ni)。
+    局部变量:在程序执行完毕后，其值自动消失
+    全局变量:在程序执行完毕后，其值仍然存在。
 
 defun function  # 不加c:，命令行中调用（function）
 
@@ -107,17 +113,44 @@ entlast
 
 entget
 
-## 技巧
+### 对象属性相关函数
+
+- 2.1 (entsel[提示]) 请求选择一个对象，返回包含对象名称及选点坐标的列表
+- 2.2 (car列表) 返回列表中的第一个元素 (通常用来求x坐标)
+- 2.3 (cadr列表) 返回列表中的第二个元素 (通常用来求y坐标)
+- 2.4 (caddr列表) 返回列表中的第三个元素 (通常用来求z坐标)
+- 2.5 (cdr列表) 返回除去第一个元素后的列表
+- 2.6 (entlast) 取出图形对象中的最后一个属性
+- 2.7 (entget 称[应用序列表])   取得对象名称的属性联合列表
+- 2.8 (assoc关键元素联合列表) 按关键元素寻找联合列表中的关系属性
+- 2.9 (cons新素列表)  返回:将新元素结合到列表 (常用于产生“点对列表”
+- 2.10 (subst新项项列表) 返回:替换旧列表后的列表
+- 2.11 (entmod对列) 按更新的属性列表更新屏幕上的对象
+- 2.12  (list 元素元素···) 返回:将元素合并成一列表
+
+
+
+
+
+
+
+## 规则技巧
 
 双击(  会标示）
 
 nil 与 “” 有时候不相同，没有输入的时候为""
+
+- (setq pt3 '(11 123))    '(11 123)表示点列表，或者(setq pt3 (list 11 123))
+
+- 副选项中，“”代表enter键
 
 ## 注意事项
 
 字符串比较时，大小写不同
 
 caipanshu  123qweasdZ
+
+- !变量 用来查询变量
 
 ## 问题
 
@@ -126,6 +159,8 @@ print  “str” 会和回车引号一起输出
 princ “str” 会输出str
 
 prin1
+
+
 
 
 
