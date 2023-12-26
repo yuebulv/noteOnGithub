@@ -43,6 +43,57 @@
 - V-Load-Com 函数用于加载 vla 开头的函数,在每个程序的开头加一句即可,不用每句话都加,后面的代码我们都认为程序已经先写了这个函数.
   旧版的 CAD,有些没有加载这个函数,会造成一些函数无法找到
 
+### 流程控制
+
+if
+
+progn
+
+cond 会根据判断结果匹配条件，[第7集AutoLisp流程控制函数1_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1kb411V7K8?p=7&spm_id_from=pageDriver&vd_source=71766beb4ab755e8dfb4543e1008fa76)
+
+repeat
+
+while
+
+图元
+
+entsel
+
+entnext
+
+entlast
+
+entget
+
+### 对象属性相关函数
+
+- 2.1 (entsel[提示]) 请求选择一个对象，返回包含对象名称及选点坐标的列表
+- 2.2 (car列表) 返回列表中的第一个元素 (通常用来求x坐标)
+- 2.3 (cadr列表) 返回列表中的第二个元素 (通常用来求y坐标)
+- 2.4 (caddr列表) 返回列表中的第三个元素 (通常用来求z坐标)
+- 2.5 (cdr列表) 返回除去第一个元素后的列表
+- 2.6 (entlast) 取出图形对象中的最后一个属性
+- 2.7 (entget 称[应用序列表])   取得对象名称的属性联合列表
+- 2.8 (assoc关键元素联合列表) 按关键元素寻找联合列表中的关系属性
+- 2.9 (cons新素列表)  返回:将新元素结合到列表 (常用于产生“点对列表”
+- 2.10 (subst新项项列表) 返回:替换旧列表后的列表
+- 2.11 (entmod对列) 按更新的属性列表更新屏幕上的对象
+- 2.12  (list 元素元素···) 返回:将元素合并成一列表
+
+### 子程序
+
+defun function  # 不加c:，命令行中调用（function）
+
+### 选择集
+
+![image-20231225155132022](lisp note.assets/image-20231225155132022.png)
+
+### 读写文件
+
+![image-20231226113504428](lisp note.assets/image-20231226113504428.png)
+
+![image-20231226113417564](lisp note.assets/image-20231226113417564.png)
+
 ## 函数
 
 - defun c: function(a b / c d) # 加c:命令行中调用function
@@ -91,42 +142,7 @@ setvar "osmode" 0 关闭对象捕捉
 
 polar 返回一个点
 
-### 流程控制
-
-if
-
-progn
-
-cond 会根据判断结果匹配条件，[第7集AutoLisp流程控制函数1_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1kb411V7K8?p=7&spm_id_from=pageDriver&vd_source=71766beb4ab755e8dfb4543e1008fa76)
-
-repeat
-
-while
-
-图元
-
-entsel
-
-entnext
-
-entlast
-
-entget
-
-### 对象属性相关函数
-
-- 2.1 (entsel[提示]) 请求选择一个对象，返回包含对象名称及选点坐标的列表
-- 2.2 (car列表) 返回列表中的第一个元素 (通常用来求x坐标)
-- 2.3 (cadr列表) 返回列表中的第二个元素 (通常用来求y坐标)
-- 2.4 (caddr列表) 返回列表中的第三个元素 (通常用来求z坐标)
-- 2.5 (cdr列表) 返回除去第一个元素后的列表
-- 2.6 (entlast) 取出图形对象中的最后一个属性
-- 2.7 (entget 称[应用序列表])   取得对象名称的属性联合列表
-- 2.8 (assoc关键元素联合列表) 按关键元素寻找联合列表中的关系属性
-- 2.9 (cons新素列表)  返回:将新元素结合到列表 (常用于产生“点对列表”
-- 2.10 (subst新项项列表) 返回:替换旧列表后的列表
-- 2.11 (entmod对列) 按更新的属性列表更新屏幕上的对象
-- 2.12  (list 元素元素···) 返回:将元素合并成一列表
+- 
 
 
 

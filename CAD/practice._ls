@@ -96,3 +96,135 @@
 )
 (prompt"\n<5TEST2>>自动等圆相切绘制")
 (prin1)
+
+(defun c:chgrad()
+	(setvar "cmdecho" 0) ;命令执行过程不返回
+	;拼以下为INPUT对象选择
+	(setq en (entsel"选择已知圆:")) ;要求碰选一一个圆
+	;;;;以下为对象属性与半径属性取得
+	(setq en_data (entget (car en))) 	;取得对象属性列表
+	(setq old_rad_list (assoc 40 en_data))	;取得半径子列表
+	(setq old_rr (cdr old_rad_list)) 	;取得旧有半径
+	(princ"\n旧半径")(princ old_rr) 	;显示该旧圆半径值于命令行
+	;;;以下为新半径输入与对象属性新旧半径更替
+	(setq cenpt (cdr (assoc 10 en_data)))	;取得圆的圆心
+	(setq new_rr (getdist cenpt "\nNew Radius:")) 	;要求输入一半径值
+	(setq new_rad_list (cons 40 new_rr))	;产生新半径子列表
+	(setq en_data (subst new_rad_list old_rad_list en_data))	;新旧交替
+	(entmod en_data)	;根据新对象属性自动更新圆半径
+	(prin1)
+  )
+(prompt "修改圆半径")
+(prin1)
+
+(defun c:cpoly5()
+	(setvar "cmdecho" 0) ;命令执行过程不响应
+	(setq en (entsel "Select CIRCLE:")) ;要求选择一个圆
+	(setq en_data (entget (car en))) ;取得对象属性列表
+	(setq cenpt (cdr (assoc 10 en_data))) ;求得圆心cenpt
+	(setq rr (cdr (assoc 40 en_data))) ;求得半径m
+	(command "polygon" 5 cenpt "i" rr) ;完成圆内接正五边形
+	(prin1)
+  )
+(prompt "内接正五边形")
+(prin1)	
+	
+(defun c:mcir3()
+	(setvar "cmdecho" 0)
+	(setq en (entsel "Select aLINE:"))
+	(setq pts (cadr en))
+	(setq mpt (osnap pts "mid"))
+	(command "circle"mpt pause) ;注意pause的用法
+	(prin1)
+)	
+	
+(prompt "<C:MCIR3>>***")
+(prin1)	
+	
+	
+(defun c:7testa()
+	;以下size值须由用户输入
+	(initget"A0 A1 A2 A3 A4") ;输入字符有效性
+	(setq size(getkword"请输入图纸大小A0,A1,A2,A3,A4,<A3>"))
+	(if(= size nil)(setq size "A3"))
+	(setq size(strcase size));统一转成大写
+	;cond多重判断式
+	(cond((= size "A0") (setq p2 '(1189 841)))
+		((= size"A1")(setq p2 '(841 594)))
+		((= size "A2") (setq p2 '(594 420)))
+		((= size"A3")(setq p2 '(420 297)))
+		((= size"A4") (setq p2 '(297 210)))
+		(t(setq p2 '(420 297)))
+	     )
+	;准备绘制矩形图框
+	(setq p1 '(0 0))
+	(command "rectang" p1 p2)
+	(command "zoom" "A")
+	(prin1)
+  )
+
+(defun c:7test2()
+	;以下paww、hh、n值须由用户输入
+	(setq pa(getpoint"请求输入左下角点:"))
+	(setq ww(getdist pa"\n请求输入楼梯宽度:"))
+	(setq hh (getdist pa"\n请求输入楼梯高度:"))
+	(setq n (getint "\n请求输入楼梯阶数:"))
+	;先画出pa>pb>pc
+	(setq pb (polar pa 0 ww))
+	(setq pc (polar pb (/ pi 2) hh))
+	(command "line" pa pb pc "")
+	;请留意以下三行dw、dh、pp值须由程序依据ww、hh与n求出
+	(setq dw (/ ww n))
+	(setq dh (/ hh n))
+	(setq pp pa)
+	;以下准备进入repeat循环了
+  	;方案一，用line画
+;;;	(repeat n
+;;;		(setq p1 (polar pp (/ pi 2) dh))
+;;;		(setq p2 (polar p1 0 dw))
+;;;		(command "line" pp p1 p2 "")
+;;;		(setq pp p2)
+;;;	  )
+  
+  	;方案二，用多段线画
+	(command "pline")
+  	(command pp)
+	(repeat n
+		(setq p1 (polar pp (/ pi 2) dh))
+		(setq p2 (polar p1 0 dw))
+		(command p1 p2)
+		(setq pp p2)
+  	  )
+	(command"")
+
+	(prin1)
+  
+  )
+(prompt"\n<<7TEST2>>快速自动楼梯绘制程序")
+(prin1)
+
+(defun c:7test3()
+	;以下paww、hh、n值须由用户输入
+	(setq n(getint"请求输入正多边形边数N="))
+	(setq en(entsel"\n选取想作内切正多边形的圆:"))
+	(setq I 0)
+	(while en;当en存在时，执行以下循环内容，直到en 不存在为止
+		(setq en_data (entget (car en)))
+		(setq en_type (cdr (assoc 0 en_data)))
+		;群码0为对象类别
+		(if(= en_type "CIRCLE")
+			(progn
+				(setq cenpt (cdr (assoc 10 en_data)))
+				(setq rad (cdr (assoc 40 en_data)))
+				(command "polygon" n cenpt "I" rad)
+				(setq I(1+ I))
+			  )
+			(alert"该对象并不是圆请重新选取圆")
+		);end if
+		(setq en(entsel "\n选择下一个想作内切正多边形的圆:"))
+	  )
+	(princ(strcat"\n共绘制了"(itoa i)"圆内切正多边形"))
+	(prin1)
+  )
+(prompt"\n<<7TEST3>连续对多个圆绘制内切正多边形")
+(prin1)
