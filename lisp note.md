@@ -94,6 +94,8 @@ defun function  # 不加c:，命令行中调用（function）
 
 ![image-20231226113417564](lisp note.assets/image-20231226113417564.png)
 
+114
+
 ## 函数
 
 - defun c: function(a b / c d) # 加c:命令行中调用function
@@ -159,6 +161,8 @@ nil 与 “” 有时候不相同，没有输入的时候为""
 - (setq pt3 '(11 123))    '(11 123)表示点列表，或者(setq pt3 (list 11 123))
 
 - 副选项中，“”代表enter键
+
+’(） 生成一个空列表
 
 ## 注意事项
 
