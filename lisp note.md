@@ -1,4 +1,4 @@
-# vlisual lisp
+# autolisp
 
 ## 书籍
 
@@ -150,7 +150,7 @@ polar 返回一个点
 
 
 
-
+## DCL
 
 ## 规则技巧
 
@@ -227,3 +227,227 @@ com里面也没法实现如lisp中grread的动态效果，使用事件会崩溃�
 
 有人Python开发Autocad吗？都是COM，好像很少讨论
 http://bbs.mjtd.com/forum.php?mod=viewthread&tid=185262&fromuid=7319936
+
+## 
+
+# visual lisp
+
+## 介绍
+
+visual lisp 是 AutoLisp的超强进化变身
+
+- 色彩化展示
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106153427104.png" alt="image-20240106153427104" style="zoom:50%;" />
+
+- 自动排列格式
+- 自动匹配结果
+- 快速预览DCL
+- 新增新函数
+  - vl
+  - vla
+  - vlax
+  - vlr
+- 支持ActiveX对象的访问
+- 提供编译的AutoLisp程序
+  - fas后缀 （vlisp-complie "filepath"）
+
+## 基本环境
+
+### 控制台
+
+1. 输入变量不用加！号
+2. 可以同时输入多行命令，【Ctrl+Enter】换行
+3. esc舍弃目前表达式
+4. Tab 、Shift+Tab上下翻命令
+
+### 文字编辑器
+
+1. 文字排列格式的调整与修改
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172143313.png" alt="image-20240106172143313" style="zoom:50%;" />
+
+1. 程序的加载与执行
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172338438.png" alt="image-20240106172338438" style="zoom:50%;" />
+
+1. 检查程序的语法错误
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172622028.png" alt="image-20240106172622028" style="zoom:50%;" />
+
+1. 适用函数快速替代法
+   - 选中函数 按Ctrl+Shift+SpaceBar
+2. 书签-协助浏览与查看程序
+
+### 快捷键
+
+1. 选择功能的快捷键
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106173724726.png" alt="image-20240106173724726" style="zoom:50%;" />
+2.  浏览功能的快捷键
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106173847967.png" alt="image-20240106173847967" style="zoom:50%;" />
+3. 修正功能快捷键
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174110978.png" alt="image-20240106174110978" style="zoom:50%;" />
+4. 缩进功能快捷键
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174238722.png" alt="image-20240106174238722" style="zoom:50%;" />
+5. 书签功能快捷键
+   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174329328.png" alt="image-20240106174329328" style="zoom:50%;" />
+
+## 新增重要函数
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106175336084.png" alt="image-20240106175336084" style="zoom:50%;" />
+
+### 1 列表处理新增函数
+
+### 2 字符串、字符、符号处理新增函数
+
+### 3 文件处理新增函数
+
+### 4 AutoCAD相关的查询、控制新增函数
+
+### 5 名称空间通信新增函数
+
+### 6 Windows登录新增函数
+
+7 错误处理新增函数
+
+8 ActiveX对象处理新增函数
+
+9 ActiveX方法与特性处理新增函数
+
+10 ActiveX集成对象处理新增函数
+
+11 ActiveX数据转换新增函数
+
+12 字典处理新增函数
+
+13 LX名称空间函数
+
+14 反应器处理新增函数
+
+15 VBA处理新增函数
+
+16 曲线测量新增函数出
+
+## 程序调试
+
+### 1 调试功能：检查Visual LISP的程序括号对称
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106180406780.png" alt="image-20240106180406780" style="zoom:50%;" />
+
+### 2 调试功能：用颜色来协助判断Visual LISP函数
+
+修改颜色：工具->属性窗口
+
+### 3 调试功能：.智能的程序语法错误检验
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106180451440.png" alt="image-20240106180451440" style="zoom:50%;" />
+
+### 4 调试功能：设置断点逐步执行程序
+
+### 5 Visual LISP的数据类型检验功能
+
+### 6 Visual LISP调试工具栏速查
+
+### 7 本章结语
+
+## AutoCad ActiveX对象控制
+
+### 1 传统AutoLISP DXF群码控制对象的缺点
+
+1. 群码不容易记
+2. 更新对象数据不易
+3. 不易与外界主流程序交流
+4. 以DXF群码数据为桥梁，等于在控制上多了一个第三者，间接处理对象，速度受影响
+
+### 2 新一代AutoCAD ActiveX对象控制的优点
+
+亲和性强一目了然
+
+不用记群码，只记得对象特性与方法即可
+
+更新对象数据更容易
+
+目前符合主流程序语言对象数据架构与访问格式
+
+访问对象不用通过群码，而采用直接的控制，速度更快
+
+### 3 AutoCAD ActiveX对象模型架构图
+
+### 4 AutoCAD ActiveX对象的特性与方法
+
+### 5 AutoCAD ActiveX函数的加载与对象转换
+
+(vl-load-com)	
+
+如果处在AutoCAD程序开发环境中，则建议你将这一行加到acad.lsp或acaddoc.lsp中，或搭配menu菜单加到MNL文件中。但是如果程序是受委托开发的独立系统，请务必在程序中添加此行，免得产生程序无法顺利执行的错误。
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106213410837.png" alt="image-20240106213410837" style="zoom:50%;" />
+
+查看Autolisp对象与VLA对象方法
+
+- (entget en)
+- (vlax-dump-object)
+
+创建最关键的AutoCAD应用程序对象、图形文件与模型对象
+
+`(setq acadobj(vlax-get-acad-object)) ←非常重要，关键母体就是它
+(setq dwgobj(vla-get-ActiveDocument acadobj)) ←取得目前打开图形文件对象
+(setq mspace(vla-get-ModelSpace dwgobj)) ←取得模型空间集合对象`
+
+### 6 主要的ActiveX对象控制函数
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106214316106.png" alt="image-20240106214316106" style="zoom:50%;" />
+
+### 7 查看AutoCAD ActiveX对象特性
+
+### 8 AutoCAD ActiveX的集合对象
+
+### 9 整合Excel、Word及其他应用软件的关键
+
+### 10 转换AutoLISP数据类型为ActiveX数据类型
+
+### 11 解除对象与释放内存
+
+### 12 本章结语
+
+## 2D对象
+
+### 1 本章重要函数一览
+
+### 2 模型空间集合对象可用的方法
+
+### 3 踏出掌握ActiveX创建2D对象的第一步
+
+### 4 如何掌握正确语法控制“对象方法”
+
+### 5 踏出掌握ActiveX2D对象特性的第一步
+
+### 6 如何掌握正确的2D对象特性
+
+### 7 轻松取得特性资料的两种技巧
+
+### 8 踏出更新ActiveX2D对象特性的第一步
+
+### 9 轻松更新对象特性数据的两种技巧
+
+### 10 充分掌握2D对象的方法
+
+### 11 精选范例：取得任意两对象的交点
+
+### 12 精选范例：执行矩形数组方法
+
+### 13 本章结语
+
+## 3D对象
+
+## 文字编辑
+
+## 图层管理
+
+## 块与属性管理
+
+## Options选项控制
+
+## Excel
+
+## Word
+
+## 程序的创建与维护
+
