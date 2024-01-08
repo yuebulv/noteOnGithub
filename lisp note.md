@@ -435,11 +435,120 @@ visual lisp 是 AutoLisp的超强进化变身
 
 ### 13 本章结语
 
-## 3D对象
+## 3D对象 P436
 
-## 文字编辑
+### 1 本章重要函数一览 
 
-## 图层管理
+| 1.1 (vl-load-com)                         | 加载延伸的功能函数                            |
+| ---- | ---- |
+| 1.2(vlax-dump-object 对象)                | 列示对象的方法与特性                          |
+| 1.3 (vlax-get-acad-object)                | 取得目前AutoCAD应用程序的母体对象             |
+| 1.4(vlax-get-property 对象 特性)          | 取得ActiveX对象特性                           |
+| 1.5(vlax-put-property 对象 特性 自变量)   | 更新ActiveX对象性                             |
+| 1.6(vlax-cnamc->vla-object 对象)          | 将AutoLISP对象转换为VLA对象                   |
+| 1.7(vax-3D-point 坐标列表)                | 台将一般坐标列表转换为 ActiveX 兼容的3D点结构 |
+| 1.8 (vlax-3D-point X Y [Z])              | 将一般坐标转换为ActiveX兼容的3D点结构 |
+| 1.9(vlax-safearray->list 安全数组)        | 以列表类型返回安全数组的元素 |
+| 1.10(vlax-variant-value 变量)           | 返回变量值 |
+| 1.11(vla-get-activedocument 应用程序对象) |取得作用中的文件或图形文件|
+| 1.12(vla-get-modelspace 图形文件对象)| 取得图形文件对象模型空间 |
+
+4标 tangwanba大桥取消
+
+### 2 模型空间集合对象创建3D对象的方法
+
+<img src="lisp note.assets/image-20240108120204358.png" alt="image-20240108120204358" style="zoom:50%;" />
+
+### 3 踏出掌握Activex创建3D对象的第一步
+
+### 4 如何掌握正确语法控制“对象方法”
+
+### 5 精选范例:活用3D实体的Boolean布尔运算
+
+### 6 踏出掌握ActiveX3D对象特性的第一步
+
+### 7 如何掌握正确的3D对象特性
+
+### 8 两种技巧轻松取得想要的特性资料
+
+### 9 3DSOLID的方法一览表
+
+### 10 本章结语
+
+## 文字编辑 P450
+
+### 1 本章重要函数一览
+
+|1.1 (vl-load-com)|加载延伸的功能函数|
+| ---- | ---- |
+|1.2(vlax-dump-object 对象)|列示对象的方法与特性|
+|1.3(vlax-get-acad-object)|取得目前AutoCAD应用程序的母体对象|
+|1.4(vlax-get-property 对象 特性)|取得ActiveX对象特性|
+|1.5(vlax-put-property 对象 特性 自变量)|更新ActiveX对象特性|
+|1.6(vlax-invoke-method 对象 方法 自变量)|调用指定的对象方法|
+|1.7(vlax-ename->vla-object 对象)|将AutoLISP对象转换为VLA对象|
+|1.8(vlax-3D-point 坐标列表)|将一般标列表转换为ActiveX容的3D点结构|
+|1.9(vlax-3D-point X Y [Z])|将一般标转换为Activex兼容的3D点结构|
+|1.10(vlax-safearray->list 安全数组)|以列表类型返回安全数组的元素|
+|1.11(vlax-variant-value 变量)|返回变量值|
+|1.12 (vlax-for 集合对象 达式)|将集合对象内各对象逐一执行表达式|
+|1.13(vla-get-activedocument 应用程序对象)|取得作用中的文件或图形文件|
+|1.14(vla-get-modelspace 图形文件对象)|取得图形文件对象的模型空间|
+|1.15(vla-get-textstyles 图形文件对象)|取得图形文件对象的字体集合对象|
+
+### 2 踏出STYLE字体对象访问与控制的第一步
+
+### 3 新建STYLE字体对象的方法
+
+(setq sty2(vla-add stylesobj "cc"))
+(vla-put-bigfontfile sty2 "chineset.shx")
+(vla-put-fontfile sty2 "simplex.shx")
+
+### 4 取出所有STYLE字体的技
+### 5 新建文字AddText方法
+
+### 6 精选范例:创建简易词库
+
+### 7 踏出掌握文字对象特性的第一步
+
+### 8 轻松取得文字对象特性数据的两种技巧
+
+### 9 轻松更新文字对象特性数据的两种技巧
+
+### 10 精选范例:更新文字对象特性
+
+### 11 本章结语
+
+## 图层管理 P466
+
+### 1 本章重要函数一览
+
+| 1.1(vl-load-com)                         | 加载延伸的功能函数                |
+| ---------------------------------------- | --------------------------------- |
+| 1.2(vlax-dump-object 对象)               | (列示对象的方法与特性             |
+| 1.3 (vlax-get-acad-objcct)               | 取得当前AutoCAD应用程序的母体对象 |
+| 1.4(vlax-get-property 对象 特性)         | 取得ActiveX对象特性               |
+| 1.5(vlax-put-property 对象 特性 自变量)  | 更新ActiveX对象性                 |
+| 1.6(vlax-invoke-method 对象 方法 自变量) | 调用指定的对象方法                |
+| 1.7(vlax-ename->vla-object 对象列表)     | 将AutoLISP对象列表转换为VLA对象   |
+| 1.8(vlax-for-obj 集合对象 表达式)        | 将集合对象内各对象逐一执行表达式  |
+| 1.9(vla-get-activedocument 应用程序对象) | 调用指定的对象方法件              |
+| 1.10(vla-get-modelspace 图形文件对象)    | 取得图形文件对象的模型空间        |
+| 1.11(vla-get-layers 图形文件对象)        | 取得图形文件对象的图层集合对象    |
+
+### 2 踏出LAYER图层对象访问与控制的第一步
+
+### 3 新建LAYER图层对象的方法
+
+### 4 取出所有LAYER图层的技巧
+
+### 5 精选范例:创建简易图层管理
+
+### 6 完整的图层管理程序与DCL真面目
+
+### 7 新旧图层列表获取技巧差异比较
+
+### 8 本章结语
 
 ## 块与属性管理
 
