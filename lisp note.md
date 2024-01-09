@@ -150,7 +150,67 @@ polar 返回一个点
 
 
 
-## DCL
+## 3.12 DCL对话框 P217
+
+### 1 自我介绍:我不多花你一毛钱
+
+### 2 我是AutoLISP的好帮手!
+
+### 3 DCL犹如千面女郎，变化多端!
+
+### 4 DCL身在何处
+
+### 5 谁必须学DCL
+
+### 6 如何设计精彩的DCL对话框画面
+
+### 7 两个最重要的DCL文件
+
+在 AutoCAD 的SUPPORT 文件夹下，有两个重要的 DCL 文件，若非必要，不要轻易修改以免造成AutoCAD 无法正常运行。
+BASE.DCL，包含 DCL的初始定义及集成DCL对象定义。
+QACAD.DCL，包含AutoCAD 所使用到的各个DCL 画面，是一个不错的学习文件。
+
+### 8 DCL对话框组介绍
+
+#### 组一 标准内定的 DCL 对话框
+
+![image-20240109163037389](lisp note.assets/image-20240109163037389.png)
+
+#### 组二 美化性的DCL选项组
+
+特性:不能选择，也不会有动作，纯粹用来美化对话框的画面、信息显示及视觉强调。
+
+![image-20240109163241565](lisp note.assets/image-20240109163241565.png)
+
+#### 组三 群集配置的DCL对象
+
+特性:用来设置各 DCL对象的排列方式
+
+![image-20240109163346358](lisp note.assets/image-20240109163346358.png)
+
+
+
+#### 组四 标准预设的整合 DCL
+
+特性:定义于 BASE.DCL 中的整合设计 DCL对象可以直接使用，有助于更快速地完成所需的 DCL 设计。
+
+![image-20240109163518686](lisp note.assets/image-20240109163518686.png)
+
+## 3.13 轻松、简单、快速地进入DCL天地
+
+### 1 DCL对话框的特点与关键
+
+### 2 DCL基本语法结构十大宁则
+
+### 3 预览DCL对话框的MEWDCLLSP程序
+
+### 4 新手上路DCL设计轻松入门
+
+### 5 最重要的DCL文件-BASEDCL
+
+### 6 观摩学习AutoCAD的DCL文件
+
+### 7本章结语
 
 ## 规则技巧
 
@@ -238,7 +298,7 @@ visual lisp 是 AutoLisp的超强进化变身
 
 - 色彩化展示
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106153427104.png" alt="image-20240106153427104" style="zoom:50%;" />
+<img src="pic\image-20240106153427104.png" alt="image-20240106153427104" style="zoom:50%;" />
 
 - 自动排列格式
 - 自动匹配结果
@@ -264,13 +324,13 @@ visual lisp 是 AutoLisp的超强进化变身
 ### 文字编辑器
 
 1. 文字排列格式的调整与修改
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172143313.png" alt="image-20240106172143313" style="zoom:50%;" />
+   - <img src="pic\image-20240106172143313.png" alt="image-20240106172143313" style="zoom:50%;" />
 
 1. 程序的加载与执行
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172338438.png" alt="image-20240106172338438" style="zoom:50%;" />
+   - <img src="pic\image-20240106172338438.png" alt="image-20240106172338438" style="zoom:50%;" />
 
 1. 检查程序的语法错误
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106172622028.png" alt="image-20240106172622028" style="zoom:50%;" />
+   - <img src="pic\image-20240106172622028.png" alt="image-20240106172622028" style="zoom:50%;" />
 
 1. 适用函数快速替代法
    - 选中函数 按Ctrl+Shift+SpaceBar
@@ -279,19 +339,19 @@ visual lisp 是 AutoLisp的超强进化变身
 ### 快捷键
 
 1. 选择功能的快捷键
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106173724726.png" alt="image-20240106173724726" style="zoom:50%;" />
+   - <img src="pic\image-20240106173724726.png" alt="image-20240106173724726" style="zoom:50%;" />
 2.  浏览功能的快捷键
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106173847967.png" alt="image-20240106173847967" style="zoom:50%;" />
+   - <img src="pic\image-20240106173847967.png" alt="image-20240106173847967" style="zoom:50%;" />
 3. 修正功能快捷键
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174110978.png" alt="image-20240106174110978" style="zoom:50%;" />
+   - <img src="pic\image-20240106174110978.png" alt="image-20240106174110978" style="zoom:50%;" />
 4. 缩进功能快捷键
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174238722.png" alt="image-20240106174238722" style="zoom:50%;" />
+   - <img src="pic\image-20240106174238722.png" alt="image-20240106174238722" style="zoom:50%;" />
 5. 书签功能快捷键
-   - <img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106174329328.png" alt="image-20240106174329328" style="zoom:50%;" />
+   - <img src="pic\image-20240106174329328.png" alt="image-20240106174329328" style="zoom:50%;" />
 
 ## 新增重要函数
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106175336084.png" alt="image-20240106175336084" style="zoom:50%;" />
+<img src="pic\image-20240106175336084.png" alt="image-20240106175336084" style="zoom:50%;" />
 
 ### 1 列表处理新增函数
 
@@ -329,7 +389,7 @@ visual lisp 是 AutoLisp的超强进化变身
 
 ### 1 调试功能：检查Visual LISP的程序括号对称
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106180406780.png" alt="image-20240106180406780" style="zoom:50%;" />
+<img src="pic\image-20240106180406780.png" alt="image-20240106180406780" style="zoom:50%;" />
 
 ### 2 调试功能：用颜色来协助判断Visual LISP函数
 
@@ -337,7 +397,7 @@ visual lisp 是 AutoLisp的超强进化变身
 
 ### 3 调试功能：.智能的程序语法错误检验
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106180451440.png" alt="image-20240106180451440" style="zoom:50%;" />
+<img src="pic\image-20240106180451440.png" alt="image-20240106180451440" style="zoom:50%;" />
 
 ### 4 调试功能：设置断点逐步执行程序
 
@@ -378,7 +438,7 @@ visual lisp 是 AutoLisp的超强进化变身
 
 如果处在AutoCAD程序开发环境中，则建议你将这一行加到acad.lsp或acaddoc.lsp中，或搭配menu菜单加到MNL文件中。但是如果程序是受委托开发的独立系统，请务必在程序中添加此行，免得产生程序无法顺利执行的错误。
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106213410837.png" alt="image-20240106213410837" style="zoom:50%;" />
+<img src="pic\image-20240106213410837.png" alt="image-20240106213410837" style="zoom:50%;" />
 
 查看Autolisp对象与VLA对象方法
 
@@ -393,7 +453,7 @@ visual lisp 是 AutoLisp的超强进化变身
 
 ### 6 主要的ActiveX对象控制函数
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240106214316106.png" alt="image-20240106214316106" style="zoom:50%;" />
+<img src="pic\image-20240106214316106.png" alt="image-20240106214316106" style="zoom:50%;" />
 
 ### 7 查看AutoCAD ActiveX对象特性
 
