@@ -200,9 +200,30 @@ QACAD.DCL，包含AutoCAD 所使用到的各个DCL 画面，是一个不错的�
 
 ### 1 DCL对话框的特点与关键
 
-### 2 DCL基本语法结构十大宁则
+### 2 DCL基本语法结构十大规则
 
-### 3 预览DCL对话框的MEWDCLLSP程序
+规则1 以文件类型存在的DCL程序(ASCIⅡ文件)，其扩展名最好是.DCL。
+
+规则4 DCL程序中的批注有两种方式（请注意，不能用AutoLISP中的分号“；”）
+
+- 第一种方式：加上两个斜线“//”，双斜线后的一行文字为批注。
+- 第二种方式：/* 之间的文字内容不受行数限制 */。
+
+规则5 DCL程序设计的基本结构。
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114134010719.png" alt="image-20240114134010719" style="zoom:50%;" /><img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114134040147.png" alt="image-20240114134040147" style="zoom:50%;" />
+
+规则7 DCL对象与对象属性请务必用小写英文字母表示。对于未定义的对象属性，DCL会自动带入默认值。
+
+规则9 DCL的加载若语义有误，AutoCAD会出现警告窗口，如图13-1所示。错误会被记录于工作文件夹内的ACAD.DCE,读者只要使用记事本打开它，就能知道哪里发生了错误，如图13-2所示。
+
+### 3 预览DCL对话框
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114170026028.png" alt="image-20240114170026028" style="zoom:50%;" />
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114170523351.png" alt="image-20240114170523351" style="zoom:50%;" />
+
+dia_name要与DCL中对话框名一致
 
 ### 4 新手上路DCL设计轻松入门
 
