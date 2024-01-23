@@ -41,6 +41,18 @@ git clone 远程地址
 git fetch [远程库地址别名][远程分支名]
 git merge [远程库地址别名/远程分支名]
 
+# 注意修改成自己的IP和端口号
+git config --global http.proxy http://127.0.0.1:7890 
+git config --global https.proxy http://127.0.0.1:7890
+
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# 查看代理
+git config --global --get http.proxy
+git config --global --get https.proxy
+
 vim编辑器
 	：set nu	'显示行号
 	i	‘插入
