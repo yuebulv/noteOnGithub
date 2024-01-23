@@ -233,6 +233,38 @@ dia_name要与DCL中对话框名一致
 
 ### 7本章结语
 
+## 3.14 DCL对话框的对象属性定义速查
+
+### 1 DCL对象属性速查总表 P261
+
+### 2 各DCL对象属性分析速查表
+
+## 3.15 AutoLISP掌控DCL的关键技巧
+
+### 1 新手上路：出发前的叮咛
+
+### 2 AutoLISP掌控DCL相关函数一览表 P274
+
+### 3 加载与释放DCL文件
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123221832443.png" alt="image-20240123221832443" style="zoom:50%;" />
+
+### 4 激活与终止dialog对话框
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123232623099.png" alt="image-20240123232623099" style="zoom:50%;" />
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123233300957.png" alt="image-20240123233300957" style="zoom:50%;" />
+
+### 5 选择与触发DCL对象后连接、调用子程序
+
+### 6 DCL对象效果处理及数据的设置与取得
+
+### 7 处理列表框list_box与下拉菜单popup_llist
+
+### 8 处理图像image与图像按钮image_button
+
+### 9 DCL对话框调用不能执行的AutoLISP函数
+
 ## 规则技巧
 
 双击(  会标示）
