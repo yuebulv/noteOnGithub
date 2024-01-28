@@ -257,7 +257,19 @@ dia_name要与DCL中对话框名一致
 
 ### 5 选择与触发DCL对象后连接、调用子程序
 
+![image-20240127133046775](D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127134031474.png)
+
 ### 6 DCL对象效果处理及数据的设置与取得
+
+![image-20240127134205372](D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127134205372.png)
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127135154333.png" alt="image-20240127135154333" style="zoom:50%;" />
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140400338.png" alt="image-20240127140400338" style="zoom:50%;" />
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140556453.png" alt="image-20240127140556453" style="zoom:50%;" />
+
+<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140613231.png" alt="image-20240127140613231" style="zoom:50%;" />
 
 ### 7 处理列表框list_box与下拉菜单popup_llist
 
