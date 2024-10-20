@@ -211,7 +211,7 @@ QACAD.DCL，包含AutoCAD 所使用到的各个DCL 画面，是一个不错的�
 
 规则5 DCL程序设计的基本结构。
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114134010719.png" alt="image-20240114134010719" style="zoom:50%;" /><img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114134040147.png" alt="image-20240114134040147" style="zoom:50%;" />
+<img src="pic\image-20240114134010719.png" alt="image-20240114134010719" style="zoom:50%;" /><img src="pic\image-20240114134040147.png" alt="image-20240114134040147" style="zoom:50%;" />
 
 规则7 DCL对象与对象属性请务必用小写英文字母表示。对于未定义的对象属性，DCL会自动带入默认值。
 
@@ -219,9 +219,9 @@ QACAD.DCL，包含AutoCAD 所使用到的各个DCL 画面，是一个不错的�
 
 ### 3 预览DCL对话框
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114170026028.png" alt="image-20240114170026028" style="zoom:50%;" />
+<img src="pic\image-20240114170026028.png" alt="image-20240114170026028" style="zoom:50%;" />
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240114170523351.png" alt="image-20240114170523351" style="zoom:50%;" />
+<img src="pic\image-20240114170523351.png" alt="image-20240114170523351" style="zoom:50%;" />
 
 dia_name要与DCL中对话框名一致
 
@@ -247,29 +247,29 @@ dia_name要与DCL中对话框名一致
 
 ### 3 加载与释放DCL文件
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123221832443.png" alt="image-20240123221832443" style="zoom:50%;" />
+<img src="pic\image-20240123221832443.png" alt="image-20240123221832443" style="zoom:50%;" />
 
 ### 4 激活与终止dialog对话框
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123232623099.png" alt="image-20240123232623099" style="zoom:50%;" />
+<img src="pic\image-20240123232623099.png" alt="image-20240123232623099" style="zoom:50%;" />
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240123233300957.png" alt="image-20240123233300957" style="zoom:50%;" />
+<img src="pic\image-20240123233300957.png" alt="image-20240123233300957" style="zoom:50%;" />
 
 ### 5 选择与触发DCL对象后连接、调用子程序
 
-![image-20240127133046775](D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127134031474.png)
+![image-20240127133046775](pic\image-20240127134031474.png)
 
 ### 6 DCL对象效果处理及数据的设置与取得
 
-![image-20240127134205372](D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127134205372.png)
+![image-20240127134205372](pic\image-20240127134205372.png)
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127135154333.png" alt="image-20240127135154333" style="zoom:50%;" />
+<img src="pic\image-20240127135154333.png" alt="image-20240127135154333" style="zoom:50%;" />
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140400338.png" alt="image-20240127140400338" style="zoom:50%;" />
+<img src="pic\image-20240127140400338.png" alt="image-20240127140400338" style="zoom:50%;" />
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140556453.png" alt="image-20240127140556453" style="zoom:50%;" />
+<img src="pic\image-20240127140556453.png" alt="image-20240127140556453" style="zoom:50%;" />
 
-<img src="D:\lvcode\noteOnGithub\noteOnGithub\pic\image-20240127140613231.png" alt="image-20240127140613231" style="zoom:50%;" />
+<img src="pic\image-20240127140613231.png" alt="image-20240127140613231" style="zoom:50%;" />
 
 ### 7 处理列表框list_box与下拉菜单popup_llist
 
